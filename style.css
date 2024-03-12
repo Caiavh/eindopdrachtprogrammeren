@@ -1,0 +1,45 @@
+body {
+    background-image: url("images/achtergrond.png");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+}
+
+div {
+    background-color: rgb(25, 182, 193);
+    padding: 1em 2em;
+    max-width: 5em;
+    margin: 2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 1.5em;
+}
+
+footer {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    justify-content: space-evenly;
+    width: 100vw;
+}
+
+p {
+    font-size: larger;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.bloempot {
+    width: 20em;
+    display: block;
+    margin: auto;
+    position: relative;
+    bottom: -31em;
+}
+
+img {
+    position: absolute;
+    bottom: 120px;
+
+}
