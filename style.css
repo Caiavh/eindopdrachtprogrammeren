@@ -3,43 +3,95 @@ body {
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
+    width: 1280px;
+    height: 577px;
 }
 
-div {
-    background-color: rgb(25, 182, 193);
+.knoppen {
+    background-color: rgb(251 244 165);
     padding: 1em 2em;
-    max-width: 5em;
+    max-width: 8em;
     margin: 2em;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
     border-radius: 1.5em;
+    box-shadow: 4px 4px rgb(150, 146, 99);
 }
 
 footer {
-    position: absolute;
-    bottom: 0;
     display: flex;
     justify-content: space-evenly;
     width: 100vw;
+    position: absolute;
+    bottom: 0;
 }
 
 p {
     font-size: larger;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
 }
 
 .bloempot {
     width: 20em;
     display: block;
     margin: auto;
-    position: relative;
-    bottom: -31em;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 10em);
 }
 
-img {
-    position: absolute;
-    bottom: 120px;
+#waterknop:active,
+#zonknop:active,
+#zuurstofknop:active {
+    background-color: rgb(217, 162, 132)
+}
 
+.plant {
+    width: 18em;
+    position: absolute;
+    bottom: 210px;
+    left: calc(50% - 8em);
+}
+
+#gieter {
+    width: 35%; 
+}
+.startpositiewater {   
+    transform: translateX(-450px);
+    transition: 2s;
+}
+
+.water_geven {
+    transform: translateX(375px);
+}
+
+#zon {
+    width: 20em;
+}
+
+.startpositiezon {
+    transform: translateY(-850px);
+    transform: translateX(-9);
+    transition: 2s;
+}
+
+.zon_schijnen {
+ transform: translateY(-500px);
+ transform: rotate(180deg);
+}
+
+#zuurstof {
+    width: 50em;
+    position: absolute;
+    left: 25% 
+}
+.startpositiebellen {
+    transform: translateY(-1350px); 
+    transition: 2s;
+}
+
+.zuurstof_bellen {
+    transform: translateY(-500px);
 }
