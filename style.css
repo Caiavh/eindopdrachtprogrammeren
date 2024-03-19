@@ -1,5 +1,5 @@
 body {
-    background-image: url("images/achtergrond.png");
+    background-image: url("images/dag.png");
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: 100vw 100vh;
@@ -73,7 +73,6 @@ p {
 
 .startpositiezon {
     transform: translateY(-850px);
-    transform: translateX(-9);
     transition: 2s;
 }
 
