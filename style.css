@@ -56,9 +56,10 @@ p {
 }
 
 #gieter {
-    width: 35%; 
+    width: 35%;
 }
-.startpositiewater {   
+
+.startpositiewater {
     transform: translateX(-450px);
     transition: 2s;
 }
@@ -77,20 +78,43 @@ p {
 }
 
 .zon_schijnen {
- transform: translateY(-500px);
- transform: rotate(180deg);
+    transform: translateY(-500px);
+    transform: rotate(180deg);
 }
 
 #zuurstof {
     width: 50em;
     position: absolute;
-    left: 25% 
+    left: 25%
 }
+
 .startpositiebellen {
-    transform: translateY(-1350px); 
+    transform: translateY(-1350px);
     transition: 2s;
 }
 
 .zuurstof_bellen {
     transform: translateY(-500px);
+}
+
+#oogstknop {
+    display: none;
+    position: absolute;
+    left: calc(50% - 8em);
+    bottom: 0;
+}
+
+#oogsthand {
+    width: 20em;
+    position: absolute;
+    top: 300px;
+}
+
+.startpositiehand {
+    transform: translateX(1410px);
+    transition: 2s;
+}
+
+.tomaat_oogsten {
+    transform: translateX(600px)
 }

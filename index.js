@@ -1,10 +1,12 @@
 const waterknop = document.querySelector('#waterknop');
 const zonknop = document.querySelector('#zonknop');
 const zuurstofknop = document.querySelector('#zuurstofknop');
+const oogstknop = document.querySelector('#oogstknop')
 const gieter = document.querySelector('#gieter');
 const zuurstof = document.querySelector('#zuurstof');
 const zon = document.querySelector('#zon');
 const plant = document.querySelector('.plant');
+const oogsthand = document.querySelector('#oogsthand')
 let audioWater = new Audio("audio/watergeluid.mp3")
 let audioZon = new Audio("audio/zongeluid.mp3")
 let audioZuurstof = new Audio("audio/bubbels.mp3")
@@ -53,6 +55,7 @@ function veranderPlant() {
         currentIndex = (currentIndex + 1) % plantImages.length;
         plant.src = plantImages[currentIndex];
         veranderAchtergrond()
+        Oogsten()
     }, 3000);
 }
 
@@ -77,6 +80,28 @@ function zuurstofGeluid() {
     audioZuurstof.play();
 }
 
+function Oogsten() {
+    console.log('VeranderAchtergrond')
+    if (currentIndex == 5) {
+        waterknop.style.display = 'none';
+        zonknop.style.display = 'none';
+        zuurstofknop.style.display = 'none';
+        oogstknop.style.display = 'block'
+    } else {
+        waterknop.style.display = 'block';
+        zonknop.style.display = 'block';
+        zuurstofknop.style.display = 'block';
+        oogstknop.style.display = 'none'
+    }
+}
+function tomaatOogsten() {
+    oogsthand.classList.add('tomaat_oogsten')
+    console.log("doet ie het?")
+}
+
+function stopOogsten() {
+    oogsthand.classList.remove('tomaat_oogsten')
+}
 
 
 waterknop.addEventListener('click', waterGeven);
@@ -85,10 +110,14 @@ zuurstofknop.addEventListener('click', zuurstofBellen);
 zuurstof.addEventListener('transitionend', stopZuurstofBellen);
 zonknop.addEventListener('click', zonSchijn);
 zon.addEventListener('transitionend', stopZonSchijn);
+oogstknop.addEventListener('click',tomaatOogsten)
+oogsthand.addEventListener('transitionend', stopOogsten)
+
 
 waterknop.addEventListener('click', veranderPlant);
 zonknop.addEventListener('click', veranderPlant);
 zuurstofknop.addEventListener('click', veranderPlant);
+oogstknop.addEventListener('click', veranderPlant)
 
 waterknop.addEventListener('click', waterGeluid)
 zonknop.addEventListener('click',zonGeluid)
