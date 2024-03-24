@@ -7,10 +7,13 @@ const zuurstof = document.querySelector('#zuurstof');
 const zon = document.querySelector('#zon');
 const plant = document.querySelector('.plant');
 const oogsthand = document.querySelector('#oogsthand')
-let audioWater = new Audio("audio/watergeluid.mp3")
+// met behulp van https://gomakethings.com/how-to-play-a-sound-with-javascript/
+let audioWater = new Audio("audio/watergeluid.mp3") 
 let audioZon = new Audio("audio/zongeluid.mp3")
 let audioZuurstof = new Audio("audio/bubbels.mp3")
-let currentIndex = 0;
+let currentIndex = 0; 
+// ChatGPT
+// Prompt: hoe kan ik images in een array zetten?
 let plantImages = [
     "images/plant2.png",
     "images/plant3.png",
@@ -25,7 +28,6 @@ randomNumber = Math.round(randomNumber)
 
 function waterGeven() {
     gieter.classList.add('water_geven')
-    console.log("doet ie het?")
 }
 
 function stopWaterGeven() {
@@ -33,8 +35,7 @@ function stopWaterGeven() {
 }
 function zonSchijn() {
     zon.classList.add('zon_schijnen')
-    document.body.style.backgroundImage = "url(images/dag.png)";
-    console.log("schijnt de zon?")
+    document.body.style.backgroundImage = "url(images/dag.png)"; 
 }
 
 function stopZonSchijn() {
@@ -43,7 +44,6 @@ function stopZonSchijn() {
 
 function zuurstofBellen() {
     zuurstof.classList.add('zuurstof_bellen')
-    console.log("en nu?!")
 }
 
 function stopZuurstofBellen() {
@@ -52,8 +52,13 @@ function stopZuurstofBellen() {
 
 function veranderPlant() {
     setTimeout(function () {
-        currentIndex = (currentIndex + 1) % plantImages.length;
+        // ChatGPT
+        // prompt: hoe automatisch door een array bewegen, waarbij elk stapje +1 is en currentIndex=0 en een length van 5?
+        currentIndex = (currentIndex + 1) % plantImages.length;  
+        // De % operator brengt de index naar 0 zodra we het einde van de lijst bereiken. 
+        // Door de modulusoperator te gebruiken, zorgen we ervoor dat de nieuwe index altijd binnen het bereik van de array blijft. 
         plant.src = plantImages[currentIndex];
+        // bron (src) van de afbeelding die wordt toegewezen aan het plant-element.
         veranderAchtergrond()
         Oogsten()
     }, 3000);
@@ -62,12 +67,16 @@ function veranderPlant() {
 function veranderAchtergrond() {
     console.log('VeranderAchtergrond')
     if (currentIndex == randomNumber) {
+        // https://www.w3schools.com/jsref/prop_style_backgroundimage.asp 
+        // Deze regel JavaScript-code wijzigt de achtergrondafbeelding van het body-element van een HTML-document.
         document.body.style.backgroundImage = "url(images/nacht.png)";
     } else {
     }
 }
 console.log(randomNumber)
 
+// met behulp van: https://gomakethings.com/how-to-play-a-sound-with-javascript/ 
+// Door de methode play() wordt het audiobestand audioWater aangeroepen, waardoor het geluid wordt afgespeeld.
 function waterGeluid() {
     audioWater.play();
 }
@@ -96,7 +105,6 @@ function Oogsten() {
 }
 function tomaatOogsten() {
     oogsthand.classList.add('tomaat_oogsten')
-    console.log("doet ie het?")
 }
 
 function stopOogsten() {
